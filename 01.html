@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>波浪刪除線效果</title>
+  <style>
+    body {
+      font-size: 32px;
+      font-family: sans-serif;
+      line-height: 2.5;
+    }
+
+    .underline-solid {
+      text-decoration: underline;
+      text-decoration-color: red;
+      text-decoration-thickness: 6px;
+    }
+
+    .underline-wavy {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: green;
+      text-decoration-thickness: 3px;
+    }
+
+    .line-through-solid {
+      text-decoration: line-through;
+      text-decoration-color: orange;
+      text-decoration-thickness: 8px;
+    }
+
+    .wave-line {
+      position: relative;
+      display: inline-block;
+    }
+
+    .wave-line svg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1em;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wave-line svg path {
+      stroke: #4b64ff;
+      stroke-width: 6;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+  <p class="underline-solid">今天心情真好!!</p>
+  <p class="underline-wavy">今天心情真好!!</p>
+  <p class="line-through-solid">今天心情真好!!</p>
+
+  <!-- 第四行：波浪刪除線 -->
+  <p class="wave-line">
+    今天心情真好!!
+    <svg viewBox="0 0 300 20" preserveAspectRatio="none">
+      <path d="M0 10 Q 15 0, 30 10 T 60 10 T 90 10 T 120 10 T 150 10 T 180 10 T 210 10 T 240 10 T 270 10 T 300 10" />
+    </svg>
+  </p>
+</body>
+</html>
